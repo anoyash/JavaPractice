@@ -93,5 +93,16 @@ public class Hello {
         num4 = num5;
 
         // num5 = num4; // this is not allowed , since we cannot convert
+
+        //modulo conversion If we for fully do implicit conversion of bigger range value in small
+        // byte is having upper limit of 127
+
+        byte num6;
+
+        // num6 = 128; it will give error cannot convert int to byte
+        num6 = (byte)130;
+        
+        System.out.println(num6);
+        System.out.println("Converted implicit conversion of bigger bucket value to small : "+num6);
     }
 }
