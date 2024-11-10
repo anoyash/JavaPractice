@@ -1,3 +1,9 @@
+/*
+ * This file contains the example 
+ * 1. Basic JAVA class syntax with main method
+ * 2. Example of primitive data types in JAVA and the examples of Primitive Data types.
+ */
+
 public class Hello {
     public static void main(String[] args) {
 
