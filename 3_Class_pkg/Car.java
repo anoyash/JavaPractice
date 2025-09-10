@@ -1,5 +1,7 @@
 /*
  * For Demonstration of Abstract Class ( 0 to 100 % abstractio)
+ * We can not create an object using Abstract Class of new AbsctractClassname
+ * But we can create object using Abstract class = new nonChildAbstractClass.
  */
 
 public abstract class Car {
@@ -19,6 +21,10 @@ public abstract class Car {
         Car audi1 = new Audi(10);
         LuxuryCar audi2 = new Audi(11);
         Audi audi3 = new Audi(12);
+
+        audi1.reduceMileage();
+        audi2.getMileage();
+        audi3.getMileage();
     }
 }
 
