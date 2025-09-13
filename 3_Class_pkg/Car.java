@@ -25,6 +25,34 @@ public abstract class Car {
         audi1.reduceMileage();
         audi2.getMileage();
         audi3.getMileage();
+
+        System.out.println(2 + 3);
+        System.out.println("String plus number " + 1);
+        System.out.println("Ashutosh " + "Kumar");
+
+        byte byteNum = 127;
+        byte byteNum1 = (byte) 128;
+
+        int myNum = Integer.MAX_VALUE - 1;
+
+        /*
+         * In Expression java is silently doing wrap - around and handing the over flow
+         */
+        for (int i = 1; i <= 4; i++) {
+            myNum += i;
+            System.out.println(i + " : " + myNum);
+        }
+
+        /*
+         * Here Math.addExact() method is doing Integer Over low exception handling
+         */
+        myNum = Integer.MAX_VALUE - 1;
+
+        for (int i = 1; i <= 4; i++) {
+            myNum = Math.addExact(i, myNum);
+            System.out.println(myNum);
+        }
+
     }
 }
 
