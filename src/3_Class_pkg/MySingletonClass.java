@@ -20,3 +20,23 @@
 // }
 
 // 2nd : Implementation of Lazy initialization
+// public class MySingletonClass {
+
+// private static MySingletonClass myDbConnection;
+
+// private MySingletonClass() {
+
+// }
+
+// public static MySingletonClass getDbConnection() {
+// if (myDbConnection == null) {
+// myDbConnection = new MySingletonClass();
+// }
+// return myDbConnection;
+// }
+
+// public static void main(String[] args) {
+// MySingletonClass myConnectionObj = MySingletonClass.getDbConnection();
+// System.out.println(myConnectionObj);
+// }
+// }
