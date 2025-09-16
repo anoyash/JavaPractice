@@ -19,6 +19,8 @@
 // }
 // }
 
+/**********/
+
 // 2nd : Implementation of Lazy initialization
 // public class MySingletonClass {
 
@@ -40,3 +42,28 @@
 // System.out.println(myConnectionObj);
 // }
 // }
+
+/**********/
+
+// 3rd : Synchorized initialization : In case of multi core and multi thread is
+// there it will put lock and un-lock
+public class MySingletonClass {
+
+    private static MySingletonClass myDbConnection;
+
+    MySingletonClass() {
+    }
+
+    synchronized public static MySingletonClass getDbConnection() {
+
+        if (myDbConnection == null) {
+            myDbConnection = new MySingletonClass();
+        }
+        return myDbConnection;
+    }
+
+    public static void main(String[] args) {
+        MySingletonClass dbConnection = MySingletonClass.getDbConnection();
+        System.out.println(dbConnection);
+    }
+}
