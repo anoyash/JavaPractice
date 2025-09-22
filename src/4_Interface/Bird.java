@@ -4,3 +4,11 @@ public class Bird {
         System.out.println("Interface demonstration has been started ");
     }
 }
+
+interface BirdTemplate {
+    void fly();
+
+    void eat();
+
+    void sleep();
+}
