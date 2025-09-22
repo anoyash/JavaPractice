@@ -42,9 +42,7 @@
 // System.out.println(myConnectionObj);
 // }
 // }
-
 /**********/
-
 // 3rd : Synchorized initialization : In case of multi core and multi thread is
 // there it will put lock and un-lock
 public class MySingletonClass {
