@@ -26,6 +26,9 @@ public class Hello {
         int   num3 = 100;
         long  num4 = 100000;
 
+        //long long myNum;  --- this type of declaration does not work in java 
+        //long long int myNum2; --- this type of declaration does not work in java 
+
         System.out.println(num1);
         System.out.println(num2);
         System.out.println(num3);

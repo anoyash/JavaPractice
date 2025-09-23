@@ -8,6 +8,8 @@ public class Bird {
 }
 
 interface BirdTemplate {
+    int max_height = 10; // by implicityl it is public static final int max_height = 10;
+
     public void fly();
 
     public void eat();
@@ -32,5 +34,23 @@ class Eagle implements BirdTemplate {
     @Override
     public void sleep() {
         System.out.println("Eagle is sleeping");
+    }
+}
+
+interface WaterAnimal {
+    public void canBreathe();
+}
+
+interface LandAnimal {
+    public void canBreathe();
+}
+
+/*
+ * Diamond problem of inheritence is resolved using inheritence
+ */
+class Crocodile implements WaterAnimal, LandAnimal {
+    @Override
+    public void canBreathe() {
+        System.out.println("Crocodile can do the breathing");
     }
 }
