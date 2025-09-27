@@ -1,8 +1,10 @@
+import java.lang.reflect.Constructor;
 import java.lang.reflect.Field;
+import java.lang.reflect.InvocationTargetException;
 
-public class Bird {
+class Bird {
 
-    public String breed;
+    private String breed;
     public String color;
     private String birdClass;
 
@@ -56,7 +58,55 @@ public class Bird {
         myField1.set(myBirdObj2, "brown king");
         myBirdObj2.getBird();
 
+        // Setting the private method of private data members
+        myField1 = myClassObj4.getDeclaredField("birdClass");
+        // myField1.setAccessible(true);
+        // here I was not getting error private acess error ???
+        myField1.set(myBirdObj2, "Class 1");
+        myBirdObj2.getBird();
+
         // 3. Reflection of Class methods
     }
 
+}
+
+class MySingletonClass {
+
+    private static final MySingletonClass myConnection = new MySingletonClass();
+
+    private MySingletonClass() {
+        System.out.println("I am private Constructor ");
+    }
+
+    public MySingletonClass getConnection() {
+        return MySingletonClass.myConnection;
+    }
+
+    public void message() {
+        System.out.println("Accessing object of Single Ton Class");
+    }
+}
+
+public class Main {
+    public static void main(String[] args)
+            throws NoSuchFieldException, IllegalAccessException, InstantiationException, InvocationTargetException {
+        Bird myBird = new Bird();
+        Class myBirdClassObj = Bird.class;
+        Field myField = myBirdClassObj.getDeclaredField("birdClass");
+        myField.setAccessible(true);
+        myField.set(myBird, "Class 1");
+        myBird.getBird();
+
+        // 4. Reflection of the Constructor
+        // creating more the one object of singleton class using constructor
+
+        Class mySingleClassObj = MySingletonClass.class;
+        Constructor[] myConstructors = mySingleClassObj.getDeclaredConstructors();
+        for (Constructor myConstructor : myConstructors) {
+
+            myConstructor.setAccessible(true);
+            MySingletonClass newObj = (MySingletonClass) myConstructor.newInstance();
+            newObj.message();
+        }
+    }
 }
