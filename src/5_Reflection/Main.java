@@ -1,6 +1,7 @@
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
 
 class Bird {
 
@@ -64,8 +65,6 @@ class Bird {
         // here I was not getting error private acess error ???
         myField1.set(myBirdObj2, "Class 1");
         myBirdObj2.getBird();
-
-        // 3. Reflection of Class methods
     }
 
 }
@@ -76,6 +75,12 @@ class MySingletonClass {
 
     private MySingletonClass() {
         System.out.println("I am private Constructor ");
+
+        /* For safeguarding the singleton class from Reflection */
+        // below code can be uncommented
+        // if (myConnection != null) {
+        // throw new RuntimeException("Restricting usage of Singleton Class");
+        // }
     }
 
     public MySingletonClass getConnection() {
@@ -97,6 +102,24 @@ public class Main {
         myField.set(myBird, "Class 1");
         myBird.getBird();
 
+        // 3. Reflection of the Class methods
+        Class myBirClassObj2 = Bird.class;
+        Method[] myMethods2 = myBirClassObj2.getMethods();
+        for (Method myMethod : myMethods2) {
+            System.out.println(myMethod.getName());
+            System.out.println(myMethod.getParameterTypes());
+            System.out.println("***");
+            System.out.println();
+        }
+
+        myMethods2 = myBirClassObj2.getDeclaredMethods();
+        for (Method myMethod : myMethods2) {
+            System.out.println(myMethod.getName());
+            // System.out.println(myMethod.getParameterTypes());
+            System.out.println("###");
+            System.out.println();
+        }
+
         // 4. Reflection of the Constructor
         // creating more the one object of singleton class using constructor
 
@@ -108,5 +131,6 @@ public class Main {
             MySingletonClass newObj = (MySingletonClass) myConstructor.newInstance();
             newObj.message();
         }
+
     }
 }
