@@ -116,6 +116,7 @@ public class Main {
         for (Method myMethod : myMethods2) {
             System.out.println(myMethod.getName());
             // System.out.println(myMethod.getParameterTypes());
+            System.out.println(myMethod.getReturnType());
             System.out.println("###");
             System.out.println();
         }
