@@ -71,6 +71,8 @@ class Bird {
 
 class MySingletonClass {
 
+    // If it is not static final , it cause infinite call stack , which leads to
+    // stack over flow error
     private static final MySingletonClass myConnection = new MySingletonClass();
 
     private MySingletonClass() {
