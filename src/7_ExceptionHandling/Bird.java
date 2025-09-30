@@ -17,6 +17,21 @@ public class Bird {
         // String val = null;
         // System.out.println(val);
         // System.out.println(val.charAt(0));
+
+        try {
+            method1();
+
+        } catch (ArithmeticException ax) {
+            System.out.println("Arithmetic Exception ");
+        } catch (ClassCastException cx) {
+
+        } catch (Exception ex) {
+            // This is generic exception object, it can handle all the exception
+            // This one should always be written in the last
+
+        } finally {
+            System.err.println("I am going to be executed always");
+        }
     }
 
     public static void method1() {
