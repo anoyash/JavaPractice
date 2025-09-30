@@ -13,9 +13,10 @@ public class Bird {
         // Integer[] myArray = new Integer[5];
         // System.out.println(myArray[1] + " " + myArray[5]);
 
-        String val = null;
-        System.out.println(val);
-        System.out.println(val.charAt(0));
+        // 4. Nullpointer Exception
+        // String val = null;
+        // System.out.println(val);
+        // System.out.println(val.charAt(0));
     }
 
     public static void method1() {
