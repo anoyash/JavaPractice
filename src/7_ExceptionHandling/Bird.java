@@ -1,3 +1,7 @@
+/*
+ * Exception object has exception message and call stack that will tell where exactly exception has happened
+ * 
+ */
 public class Bird {
 
     public static void main(String args[]) {
