@@ -1,47 +1,48 @@
 
 // 1st : Below is the implementation of eager initialization
-// public class MySingletonClass {
+public class MySingletonClass {
 
-// /* This is eager initialization */
-// private static MySingletonClass dbConnection = new MySingletonClass();
+    /* This is eager initialization */
+    private static MySingletonClass dbConnection = new MySingletonClass();
 
-// private MySingletonClass() {
-// System.out.println("constructor is called ");
-// }
+    private MySingletonClass() {
+        System.out.println("constructor is called ");
+    }
 
-// public static MySingletonClass getDbConnection() {
-// return dbConnection;
-// }
+    public static MySingletonClass getDbConnection() {
+        return dbConnection;
+    }
 
-// public static void main(String args[]) {
-// MySingletonClass myDbConnect = MySingletonClass.getDbConnection();
-// System.out.println(myDbConnect);
-// }
-// }
+    public static void main(String args[]) {
+        MySingletonClass myDbConnect = MySingletonClass.getDbConnection();
+        System.out.println(myDbConnect);
+    }
+}
 
 /**********/
 
 // 2nd : Implementation of Lazy initialization
-// public class MySingletonClass {
+public class MySingletonClass {
 
-// private static MySingletonClass myDbConnection;
+    private static MySingletonClass myDbConnection;
 
-// private MySingletonClass() {
+    private MySingletonClass() {
 
-// }
+    }
 
-// public static MySingletonClass getDbConnection() {
-// if (myDbConnection == null) {
-// myDbConnection = new MySingletonClass();
-// }
-// return myDbConnection;
-// }
+    public static MySingletonClass getDbConnection() {
+        if (myDbConnection == null) {
+            myDbConnection = new MySingletonClass();
+        }
+        return myDbConnection;
+    }
 
-// public static void main(String[] args) {
-// MySingletonClass myConnectionObj = MySingletonClass.getDbConnection();
-// System.out.println(myConnectionObj);
-// }
-// }
+    public static void main(String[] args) {
+        MySingletonClass myConnectionObj = MySingletonClass.getDbConnection();
+        System.out.println(myConnectionObj);
+    }
+}
+
 /**********/
 // 3rd : Synchorized initialization : In case of multi core and multi thread is
 // there it will put lock and un-lock
