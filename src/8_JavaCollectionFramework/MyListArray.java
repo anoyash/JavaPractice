@@ -7,7 +7,7 @@ public class MyListArray {
 
     public static void main(String[] args) {
 
-        method1();
+        // method1();
         method2();
     }
 
@@ -63,10 +63,15 @@ public class MyListArray {
         System.out.println("Reversing the values");
         Collections.reverse(values);
 
-        values.forEach((Integer val) -> System.out.print(val + " : "));
+        values.forEach((Integer val) -> System.out.print(val + " "));
 
         System.out.println("\n" + "After Swapping 1st element and 4th element");
         Collections.swap(values, 0, 3);
-        values.forEach((Integer val) -> System.out.print(val + " : "));
+        values.forEach((Integer val) -> {
+            System.out.print(val + " ");
+        });
+
+        System.out.println();
+
     }
 }
